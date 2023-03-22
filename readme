@@ -1,4 +1,4 @@
-The program is a simple tool written in Go that sends a GET request to a specified URL at regular intervals. It takes in two command line arguments - a URL and an interval (in seconds) - and uses the Go http and time packages to periodically call the URL.
+The Updater is a simple tool written in Go that sends a GET request to a specified URL at regular intervals. It takes in two command line arguments - a URL and an interval (in seconds) - and uses the Go http and time packages to periodically call the URL.
 
 To use the program, you'll need to download the executable file (updater.exe) and run it through the command line with two arguments: the URL to be called and the interval in seconds. For example, to call "https://example.com/update" every 60 seconds, you would run the following command:
 
