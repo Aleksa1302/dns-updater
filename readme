@@ -1,7 +1,15 @@
-This is a Go program that sends a GET request to a specified URL at regular intervals. The program takes in two command line arguments - a URL and an interval (in seconds).
+The program is a simple tool written in Go that sends a GET request to a specified URL at regular intervals. It takes in two command line arguments - a URL and an interval (in seconds) - and uses the Go http and time packages to periodically call the URL.
 
-The sendPush function uses the Go http package to make a GET request to the provided URL. If there is an error sending the request, the function prints an error message and returns. Otherwise, it prints a success message and closes the response body.
+To use the program, you'll need to download the executable file (updater.exe) and run it through the command line with two arguments: the URL to be called and the interval in seconds. For example, to call "https://example.com/update" every 60 seconds, you would run the following command:
 
-The main function checks that the correct number of command line arguments have been provided. If not, it prints a usage message and exits. It then parses the interval argument as an integer and calls sendPush once to send the initial push request.
+updater.exe https://example.com/update 60
+If you'd like to make the program start automatically when your computer boots up, you can create a shortcut to the updater.exe file and place it in the Windows startup folder. Here's how to do that:
 
-It creates a ticker that runs at the specified interval, using the Go time package, and loops indefinitely. On each tick of the ticker, it calls sendPush to send another push request. The defer statement ensures that the ticker is stopped when the program exits.
+Right-click on the updater.exe file and select "Create shortcut"
+Right-click on the newly created shortcut and select "Properties"
+In the "Target" field, add the URL and interval as command line arguments, separated by a space. For example:
+"C:\path\to\updater.exe" https://example.com/update 60
+Click "Apply" and "OK" to save the changes
+Open the Windows startup folder by pressing the Win+R key combination and typing "shell:startup" (without quotes)
+Drag the shortcut you created into the startup folder
+Now, the program will start automatically when your computer boots up and periodically call the specified URL at the interval you set.
