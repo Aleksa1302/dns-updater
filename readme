@@ -1,1 +1,7 @@
-hello
+This is a Go program that sends a GET request to a specified URL at regular intervals. The program takes in two command line arguments - a URL and an interval (in seconds).
+
+The sendPush function uses the Go http package to make a GET request to the provided URL. If there is an error sending the request, the function prints an error message and returns. Otherwise, it prints a success message and closes the response body.
+
+The main function checks that the correct number of command line arguments have been provided. If not, it prints a usage message and exits. It then parses the interval argument as an integer and calls sendPush once to send the initial push request.
+
+It creates a ticker that runs at the specified interval, using the Go time package, and loops indefinitely. On each tick of the ticker, it calls sendPush to send another push request. The defer statement ensures that the ticker is stopped when the program exits.
